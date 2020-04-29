@@ -2,11 +2,11 @@
   .SideHeader
     .user
       .user__name
-        name      
+        = current_user.name
       .user__icon
         = link_to "#", class: "user__icon--create" do
           <i class="fa fa-edit"></i>
-        = link_to "#", class: "user__icon--edit" do
+        = link_to edit_user_path(current_user), class: "user__icon--edit" do
           <i class="fa fa-cog"></i>
 
   .groups
