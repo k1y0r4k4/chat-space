@@ -57,9 +57,13 @@ $write-color: #ffffff;
   height: calc(100% - 100px);
 }
 .group {
-  color: $write-color;
   font-weight: bold;
   padding: 20px;
+
+    a {
+      color: $write-color;
+      text-decoration: none;
+    }
   &__name {
     font-size: 15px;
   }

@@ -6,17 +6,14 @@
       .user__icon
         = link_to new_group_path, class: "user__icon--create" do
           <i class="fa fa-edit"></i>
-        = link_to edit_user_path(current_user), class: "user__icon--edit" do
+        = link_to edit_user_path(current_user.id), class: "user__icon--edit" do
           <i class="fa fa-cog"></i>
 
   .groups
-    .group
-      .group__name
-        group1
-      .group__message
-        まだメッセージが有りません
-    .group
-      .group__name
-        group1
-      .group__message
-        まだメッセージが有りません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            まだメッセージが有りません
