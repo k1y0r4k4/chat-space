@@ -112,6 +112,7 @@ $write-color: #ffffff;
   width: 100%;
   height: calc(100vh - 190px);
   padding-left: 40px;
+  overflow: scroll;
 }
 
 .message {
@@ -142,27 +143,26 @@ $write-color: #ffffff;
   align-items: center;
 }
 
-.sending__input {
-  background-color: $write-color;
-  width: calc(100% - 200px);
-  height: 50px;
-  line-height: 50px; 
-  margin: auto;
+.new_message {
   display: flex;
-  justify-content: space-between;
+  width: 100%;
   position: relative;
-  &--text {
-    padding-left: 10px;
-
-  }
-  &--image{  
-  position: absolute;
-  right: 10px;
-    input{
-      display: none;
-    }
-  }
 }
+.sending__text {
+  background-color: white;
+  width: 100%;
+  height: 50px;
+  margin-left: 20px;
+}
+.sending__image{  
+  position: absolute;
+  bottom: 13px;
+  right: 150px;
+  #message_image{
+  display: none;
+  }
+ }
+
 .sending__submit{
   background-color: #38aef0;
   width: 100px;

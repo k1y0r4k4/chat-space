@@ -1,35 +1,23 @@
 .main-chat
   .ChatInfo
     .ChatInfo__about
-      test
+      = @group.name
       .ChatInfo__about--menber
-        menber:
+        - @group.users.each do |user|
+          = "menber: #{user.name}"
+
     .ChatInfo__edit
-      = link_to '#' do
+      = link_to edit_group_path(@group) do
         Edit
 
   .messages
-    .message
-      .message__name
-      name 
-      .message__date
-        2020/4/27(mon) 20:00:00
-    .message__text
-      おはよう！
-
-    .message
-      name 
-      .message__date
-        2020/4/27(mon) 20:00:00
-    .message__text
-      おはよう！
+    = render @messages
 
   .sending
-    .sending__input
-      .sending__input--text
-        type a message
-      %label{class: "sending__input--image"}
-        = icon('fas', 'image')
-        %input{type: "file"}
-    .sending__submit
-      Send
+    =form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'sending__text', placeholder: 'メッセージを入力'
+      .sending__image
+        = f.label :image, class: "sending__image__box" do
+          = icon('fas', 'image')
+          = f.file_field :image
+      = f.submit 'Send', class: 'sending__submit'
