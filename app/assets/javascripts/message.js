@@ -3,29 +3,31 @@ $(function(){
       if ( message.image ) {
         var html = 
           `<div class="message" data-message-id=${message.id}>
-            <div class="message__name">
-              ${message.user_name}
+            <div class="message__data">
+              <div class="message__data__name">
+                ${message.user_name}
+              </div>
+              <div class="message__data__date"> 
+                ${message.date} 
+              </div>
             </div>
-            <div class="message__date"> 
-              ${message.created_at} 
+            <div class="message__text">
+              <p class="lower-message__content">
+                ${message.content}
+              </p>
             </div>
-          </div>
-          <div class="message__text">
-            <p class="lower-message__content">
-              ${message.content}
-            </p>
-          </div>
-          <img src=${message.image} >
+            <img src=${message.image} >
           </div>`
         return html;
       } else {
          var html = 
           `<div class="message" data-message-id=${message.id}>
-            <div class="message__name">
-              ${message.user_name}
-            </div>
-              <div class="message__date"> 
-                ${message.created_at} 
+            <div class="message__data">
+              <div class="message__data__name">
+                ${message.user_name}
+              </div>
+              <div class="message__data__date"> 
+                ${message.date} 
               </div>
             </div>
             <div class="message__text">
