@@ -19,6 +19,6 @@
       = f.text_field :content, class: 'sending__text', placeholder: 'メッセージを入力'
       .sending__image
         = f.label :image, class: "sending__image__box" do
-          = icon('fas', 'image')
+          <i class="far fa-image fa-lg"></i>
           = f.file_field :image
       = f.submit 'Send', class: 'sending__submit'
